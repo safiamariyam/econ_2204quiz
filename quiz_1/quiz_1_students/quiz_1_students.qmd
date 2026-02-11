@@ -34,7 +34,7 @@ execute:
     (c) Add the Quiz 1 files to the quiz_1 directory.
     (d) Insert the link to your GitHub repository.
 
-    https://github.com/safiamariyam/econ_2204
+    https://github.com/safiamariyam/econ_2204quiz
 
 2.  Quarto Basics
 
