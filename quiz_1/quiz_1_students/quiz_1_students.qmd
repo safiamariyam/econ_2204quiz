@@ -1,0 +1,130 @@
+---
+title: |
+    | ECON 2204 
+    | Quiz 1
+author: "Safia Mariyam"
+date: "February 11, 2026"
+date-format: long
+format: pdf
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Instructions
+
+-   Time: 2:30-3:45 PM
+-   Complete this quiz in this Quarto (.qmd) file.
+-   Render to PDF and submit both:
+    1.  the `.qmd` file, and
+    2.  the rendered output (the `.pdf` file).
+-   Unless told otherwise, write your answers directly under each question.
+-   Some questions ask you to use chunk options so that only results appear (not code).
+-   This exam is closed book. No notes, texts, phones, or other study aids are allowed.
+-   The use of generative AI is strictly prohibited
+-   You may R's help manual by searching in the Help viewer in RStudio
+
+# Questions
+
+1.  Getting Started \[5 Marks\]
+
+    (a) Create an R project entitled econ_2204 and connect it to your GitHub account. Make sure you click Create git repository.
+    (b) Within the econ_2204 directory on your local computer, add a new folder called quiz_1.
+    (c) Add the Quiz 1 files to the quiz_1 directory.
+    (d) Insert the link to your GitHub repository.
+
+    https://github.com/safiamariyam/econ_2204
+
+2.  Quarto Basics
+
+    (a) In the YAML at the top of this file, replace `YOUR NAME` with your name. \[1 Mark\]
+    (b) Put the following words in the appropriate font:
+        (i) Bold \[0.5 Marks\]
+
+            **Bold**
+
+        (ii) Italics \[0.5 Marks\]
+
+             *Italic*
+
+        (iii) Code \[0.5 Marks\]
+
+              `code`
+
+3.  Write the following equations using LaTeX math syntax so that they render properly. Write them using display math. \[2 Marks each\]
+
+> (a) The simple linear regression model:
+
+$$ 
+Y_i = \beta_0 + \beta_1X_i + u_i 
+$$
+
+
+> (b) The sample mean:
+
+$$
+\bar X = \frac{1}{n} \sum^n_{i=1} X_i  
+$$
+
+3.  Insert an image using Markdown image syntax. \[5 Marks\]
+    -   Use the image in the uw-logo-centre-stack-black.png file, but it must render
+    -   Add a caption that reads: Figure 1: University of Winnipeg Logo.
+
+![Figure 1: University of Winnipeg Logo](uw-logo-centre-stack-black.png)
+
+3.  Insert an R chunk and add an Image Using R. Use the `echo: false` execution option, so that the code does not show in the PDF.
+
+```{r}
+'echo: false'
+
+```
+
+```         
+(a) Generate a variable $x=(1,2,3,4,5,6,7,8,9,10)$ \[1 Mark\]
+(b) Generate a variable $y= 2x+5$ \[1 Mark\]
+(c) Create a simple plot with $x$ on the $x$-axix and $y$ on the $y$-axis using the `plot()` function.
+(d) Add a figure caption "Simple Plot of $X$ Versus $Y$" using the quarto execution command `fig-cap`.
+(e) Add the label `fig-scatterplot` using the `label` execution command
+(f) Reference the plot in a sentence below the plot
+```
+
+```{r}
+x <- (1:10)
+y <- 2*x + 5
+
+plot(x = x,
+     y = y,
+     main = "Simple Plot of X versus Y")
+
+
+```
+
+
+
+4.  
+
+    (a) Create a data frame using `data.frame()` called `students` with columns `name` and `grade` with the following rows:
+
+| name | grade |
+|------|-------|
+| Ana  | 82    |
+| Ben  | 75    |
+| Cara | 91    |
+| Dan  | 68    |
+
+> We want the code to print in the PDF, so set `echo: true`. Compute and print the average grade.
+
+```{r}
+students <- data.frame(
+name = c("Ana","Ben","Cara","Dan"),
+grade = c(82, 75, 91, 68)
+)
+
+'echo: true'
+
+avg_grade <- sum(students$grade)/length(students$name)
+
+```
+
+6.  Commit the finished quiz to your GitHub profile \[1 Mark\]
